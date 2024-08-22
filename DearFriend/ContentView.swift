@@ -2,14 +2,20 @@
 //  ContentView.swift
 //  DearFriend
 //
-//  Created by Vũ Minh Hà on 20/8/24.
+//  Created by Khải đẹp trai nhất hệ mặt trời on 14/8/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ObjectRecognitionView()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
     }
 }
 
