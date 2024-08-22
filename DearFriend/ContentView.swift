@@ -1,15 +1,21 @@
 //
 //  ContentView.swift
-//  DearFriend
+//  VideoCall
 //
-//  Created by Vũ Minh Hà on 20/8/24.
+//  Created by Dinh Le Hong Tin on 22/8/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ObjectRecognitionView()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundStyle(.tint)
+            Text("Hello, world!")
+        }
+        .padding()
     }
 }
 
