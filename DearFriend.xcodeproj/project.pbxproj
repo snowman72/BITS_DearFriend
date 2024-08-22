@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565A57FA2C772A1100ACA009 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A57F92C772A1100ACA009 /* LoginView.swift */; };
+		565A57FC2C772A2200ACA009 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A57FB2C772A2200ACA009 /* Registration.swift */; };
+		565A57FF2C772A4600ACA009 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A57FE2C772A4600ACA009 /* InputView.swift */; };
+		565A58012C772A5E00ACA009 /* textToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A58002C772A5E00ACA009 /* textToSpeech.swift */; };
+		565A58032C772AE700ACA009 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 565A58022C772AE700ACA009 /* MobileNet.mlmodel */; };
 		BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB4C2C74BFDC0021E1C8 /* DearFriendApp.swift */; };
 		BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB4E2C74BFDC0021E1C8 /* ContentView.swift */; };
 		BCD4EB512C74BFDD0021E1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD4EB502C74BFDD0021E1C8 /* Assets.xcassets */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		565A57F92C772A1100ACA009 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		565A57FB2C772A2200ACA009 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		565A57FE2C772A4600ACA009 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		565A58002C772A5E00ACA009 /* textToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textToSpeech.swift; sourceTree = "<group>"; };
+		565A58022C772AE700ACA009 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		BCD4EB492C74BFDC0021E1C8 /* DearFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DearFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD4EB4C2C74BFDC0021E1C8 /* DearFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DearFriendApp.swift; sourceTree = "<group>"; };
 		BCD4EB4E2C74BFDC0021E1C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +52,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		565A57F82C7729FD00ACA009 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				565A57F92C772A1100ACA009 /* LoginView.swift */,
+				565A57FB2C772A2200ACA009 /* Registration.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		565A57FD2C772A3500ACA009 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				565A57FE2C772A4600ACA009 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		BCD4EB402C74BFDC0021E1C8 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +88,7 @@
 		BCD4EB4B2C74BFDC0021E1C8 /* DearFriend */ = {
 			isa = PBXGroup;
 			children = (
+				565A57FD2C772A3500ACA009 /* Components */,
 				BCD4EB612C77129A0021E1C8 /* MLModels */,
 				BCD4EB5C2C76F7940021E1C8 /* Model */,
 				BCD4EB5A2C76F77E0021E1C8 /* View */,
@@ -84,6 +112,7 @@
 		BCD4EB5A2C76F77E0021E1C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				565A57F82C7729FD00ACA009 /* Authentication */,
 				BCD4EB622C77137A0021E1C8 /* CameraPreview.swift */,
 				BCD4EB642C7713B80021E1C8 /* ObjectRecognitionView.swift */,
 			);
@@ -94,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */,
+				565A58002C772A5E00ACA009 /* textToSpeech.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,6 +139,7 @@
 		BCD4EB612C77129A0021E1C8 /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
+				565A58022C772AE700ACA009 /* MobileNet.mlmodel */,
 				BCD4EB5F2C7712870021E1C8 /* MobileNet.mlmodel */,
 			);
 			path = MLModels;
@@ -188,8 +219,13 @@
 				BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */,
 				BCD4EB602C7712870021E1C8 /* MobileNet.mlmodel in Sources */,
 				BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */,
+				565A57FC2C772A2200ACA009 /* Registration.swift in Sources */,
 				BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */,
 				BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */,
+				565A57FF2C772A4600ACA009 /* InputView.swift in Sources */,
+				565A58032C772AE700ACA009 /* MobileNet.mlmodel in Sources */,
+				565A57FA2C772A1100ACA009 /* LoginView.swift in Sources */,
+				565A58012C772A5E00ACA009 /* textToSpeech.swift in Sources */,
 				BCD4EB652C7713B80021E1C8 /* ObjectRecognitionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
