@@ -12,10 +12,10 @@
 		BCD4EB512C74BFDD0021E1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD4EB502C74BFDD0021E1C8 /* Assets.xcassets */; };
 		BCD4EB542C74BFDD0021E1C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD4EB532C74BFDD0021E1C8 /* Preview Assets.xcassets */; };
 		BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB5D2C77125D0021E1C8 /* ImagePredictor.swift */; };
-		BCD4EB602C7712870021E1C8 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB5F2C7712870021E1C8 /* MobileNet.mlmodel */; };
 		BCD4EB632C77137A0021E1C8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB622C77137A0021E1C8 /* CameraPreview.swift */; };
 		BCD4EB652C7713B80021E1C8 /* ObjectRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB642C7713B80021E1C8 /* ObjectRecognitionView.swift */; };
 		BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */; };
+		BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB682C77212B0021E1C8 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +25,10 @@
 		BCD4EB502C74BFDD0021E1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCD4EB532C74BFDD0021E1C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCD4EB5D2C77125D0021E1C8 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
-		BCD4EB5F2C7712870021E1C8 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		BCD4EB622C77137A0021E1C8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		BCD4EB642C7713B80021E1C8 /* ObjectRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognitionView.swift; sourceTree = "<group>"; };
 		BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		BCD4EB682C77212B0021E1C8 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		BCD4EB612C77129A0021E1C8 /* MLModels */ = {
 			isa = PBXGroup;
 			children = (
-				BCD4EB5F2C7712870021E1C8 /* MobileNet.mlmodel */,
+				BCD4EB682C77212B0021E1C8 /* MobileNet.mlmodel */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -186,10 +186,10 @@
 			files = (
 				BCD4EB632C77137A0021E1C8 /* CameraPreview.swift in Sources */,
 				BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */,
-				BCD4EB602C7712870021E1C8 /* MobileNet.mlmodel in Sources */,
 				BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */,
 				BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */,
 				BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */,
+				BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */,
 				BCD4EB652C7713B80021E1C8 /* ObjectRecognitionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
