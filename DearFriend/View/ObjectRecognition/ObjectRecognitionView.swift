@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ObjectRecognitionView: View {
     
-    @StateObject private var viewModel = CameraViewModel()
+    @StateObject private var viewModel: CameraViewModel
+    
+    init(initialMode: CameraViewModel.RecognitionMode) {
+        _viewModel = StateObject(wrappedValue: CameraViewModel(initialMode: initialMode))
+    }
     
     var body: some View {
         ZStack {
@@ -23,10 +27,10 @@ struct ObjectRecognitionView: View {
                 CameraPreview(session: viewModel.session)
                     .edgesIgnoringSafeArea(.all)
                 
-                // Object identification overlay
+                // Recognition overlay (Object or Text)
                 VStack {
                     Spacer()
-                    Text(viewModel.identifiedObject)
+                    Text(viewModel.currentMode ==  .object ? viewModel.identifiedObject : viewModel.recognizedText)
                         .padding()
                         .background(Color.black.opacity(0.7))
                         .foregroundColor(.white)
@@ -34,6 +38,12 @@ struct ObjectRecognitionView: View {
                         .padding(.bottom)
                 }
             }
+        }
+        .onAppear {
+            viewModel.checkCameraAuthorization()
+        }
+        .onDisappear { // the user goes back to main menu
+            viewModel.stopAllProcesses()
         }
     }
 }
