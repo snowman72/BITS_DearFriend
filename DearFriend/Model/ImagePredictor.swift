@@ -30,7 +30,7 @@ class ImagePredictor {
     }
     
     func makePredictions(for photo: UIImage, completionHandler: @escaping ImagePredictionHandler) throws {
-        let orientation = photo.imageOrientation.toCGImagePropertyOrientation()
+        let orientation = CGImagePropertyOrientation(photo.imageOrientation)
         
         guard let photoImage = photo.cgImage else {
             throw NSError(domain: "ImagePredictor", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get CGImage from UIImage"])
@@ -62,18 +62,18 @@ class ImagePredictor {
     }
 }
 
-extension UIImage.Orientation {
-    func toCGImagePropertyOrientation() -> CGImagePropertyOrientation {
-        switch self {
-        case .up: return .up
-        case .upMirrored: return .upMirrored
-        case .down: return .down
-        case .downMirrored: return .downMirrored
-        case .left: return .left
-        case .leftMirrored: return .leftMirrored
-        case .right: return .right
-        case .rightMirrored: return .rightMirrored
-        @unknown default: return .up
+extension CGImagePropertyOrientation {
+    init(_ uiOrientation: UIImage.Orientation) {
+            switch uiOrientation {
+            case .up: self = .up
+            case .upMirrored: self = .upMirrored
+            case .down: self = .down
+            case .downMirrored: self = .downMirrored
+            case .left: self = .left
+            case .leftMirrored: self = .leftMirrored
+            case .right: self = .right
+            case .rightMirrored: self = .rightMirrored
+            @unknown default: self = .up
+            }
         }
-    }
 }
