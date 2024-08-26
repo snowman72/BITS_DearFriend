@@ -13,11 +13,14 @@
 		BCD4EB542C74BFDD0021E1C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD4EB532C74BFDD0021E1C8 /* Preview Assets.xcassets */; };
 		BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB5D2C77125D0021E1C8 /* ImagePredictor.swift */; };
 		BCD4EB632C77137A0021E1C8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB622C77137A0021E1C8 /* CameraPreview.swift */; };
-		BCD4EB652C7713B80021E1C8 /* ObjectRecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB642C7713B80021E1C8 /* ObjectRecognitionView.swift */; };
+		BCD4EB652C7713B80021E1C8 /* RecognitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB642C7713B80021E1C8 /* RecognitionView.swift */; };
 		BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */; };
 		BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB682C77212B0021E1C8 /* MobileNet.mlmodel */; };
 		BCD4EB732C7B15460021E1C8 /* VIMainSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB722C7B15460021E1C8 /* VIMainSelectionView.swift */; };
 		BCD4EB752C7B16DB0021E1C8 /* TextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB742C7B16DB0021E1C8 /* TextRecognizer.swift */; };
+		BCD4EB782C7C39330021E1C8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB772C7C39330021E1C8 /* LoginView.swift */; };
+		BCD4EB7A2C7C39760021E1C8 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB792C7C39760021E1C8 /* Registration.swift */; };
+		BCD4EB7C2C7C399E0021E1C8 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB7B2C7C399E0021E1C8 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +31,14 @@
 		BCD4EB532C74BFDD0021E1C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCD4EB5D2C77125D0021E1C8 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
 		BCD4EB622C77137A0021E1C8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		BCD4EB642C7713B80021E1C8 /* ObjectRecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectRecognitionView.swift; sourceTree = "<group>"; };
+		BCD4EB642C7713B80021E1C8 /* RecognitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionView.swift; sourceTree = "<group>"; };
 		BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		BCD4EB682C77212B0021E1C8 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		BCD4EB722C7B15460021E1C8 /* VIMainSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIMainSelectionView.swift; sourceTree = "<group>"; };
 		BCD4EB742C7B16DB0021E1C8 /* TextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizer.swift; sourceTree = "<group>"; };
+		BCD4EB772C7C39330021E1C8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BCD4EB792C7C39760021E1C8 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		BCD4EB7B2C7C399E0021E1C8 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,8 @@
 		BCD4EB5A2C76F77E0021E1C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BCD4EB6D2C7ADF080021E1C8 /* ObjectRecognition */,
+				BCD4EB762C7C39180021E1C8 /* Authentication */,
+				BCD4EB6D2C7ADF080021E1C8 /* Object+TextRecognition */,
 				BCD4EB722C7B15460021E1C8 /* VIMainSelectionView.swift */,
 			);
 			path = View;
@@ -119,13 +126,23 @@
 			path = MLModels;
 			sourceTree = "<group>";
 		};
-		BCD4EB6D2C7ADF080021E1C8 /* ObjectRecognition */ = {
+		BCD4EB6D2C7ADF080021E1C8 /* Object+TextRecognition */ = {
 			isa = PBXGroup;
 			children = (
 				BCD4EB622C77137A0021E1C8 /* CameraPreview.swift */,
-				BCD4EB642C7713B80021E1C8 /* ObjectRecognitionView.swift */,
+				BCD4EB642C7713B80021E1C8 /* RecognitionView.swift */,
 			);
-			path = ObjectRecognition;
+			path = "Object+TextRecognition";
+			sourceTree = "<group>";
+		};
+		BCD4EB762C7C39180021E1C8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BCD4EB7B2C7C399E0021E1C8 /* InputView.swift */,
+				BCD4EB772C7C39330021E1C8 /* LoginView.swift */,
+				BCD4EB792C7C39760021E1C8 /* Registration.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD4EB632C77137A0021E1C8 /* CameraPreview.swift in Sources */,
+				BCD4EB7A2C7C39760021E1C8 /* Registration.swift in Sources */,
 				BCD4EB732C7B15460021E1C8 /* VIMainSelectionView.swift in Sources */,
 				BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */,
 				BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */,
@@ -206,7 +224,9 @@
 				BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */,
 				BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */,
 				BCD4EB752C7B16DB0021E1C8 /* TextRecognizer.swift in Sources */,
-				BCD4EB652C7713B80021E1C8 /* ObjectRecognitionView.swift in Sources */,
+				BCD4EB7C2C7C399E0021E1C8 /* InputView.swift in Sources */,
+				BCD4EB782C7C39330021E1C8 /* LoginView.swift in Sources */,
+				BCD4EB652C7713B80021E1C8 /* RecognitionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

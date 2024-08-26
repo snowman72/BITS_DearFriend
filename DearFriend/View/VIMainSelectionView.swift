@@ -17,14 +17,14 @@ struct VIMainSelectionView: View {
                     .font(.largeTitle)
                     .padding()
 
-                NavigationLink(destination: ObjectRecognitionView(initialMode: .object), tag: CameraViewModel.RecognitionMode.object, selection: $selectedMode) {
+                NavigationLink(destination: RecognitionView(initialMode: .object), tag: CameraViewModel.RecognitionMode.object, selection: $selectedMode) {
                     Button("See Object") {
                         selectedMode = .object
                     }
                     .buttonStyle(LargeButtonStyle())
                 }
 
-                NavigationLink(destination: ObjectRecognitionView(initialMode: .text), tag: CameraViewModel.RecognitionMode.text, selection: $selectedMode) {
+                NavigationLink(destination: RecognitionView(initialMode: .text), tag: CameraViewModel.RecognitionMode.text, selection: $selectedMode) {
                     Button("See Text") {
                         selectedMode = .text
                     }

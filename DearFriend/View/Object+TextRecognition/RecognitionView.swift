@@ -1,5 +1,5 @@
 //
-//  ObjectRecognitionView.swift
+//  RecognitionView.swift
 //  DearFriend
 //
 //  Created by Vũ Minh Hà on 22/8/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ObjectRecognitionView: View {
+struct RecognitionView: View {
     
     @StateObject private var viewModel: CameraViewModel
     
