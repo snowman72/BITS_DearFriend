@@ -21,10 +21,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct DearFriendApp: App {
     // register app delegate for Firebase setup
       @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    @StateObject var locationManager = LocationManager()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(locationManager)
         }
     }
 }
