@@ -13,6 +13,8 @@ struct Registration: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var roleManager: RoleManager
     
     var body: some View {
         VStack{
@@ -36,17 +38,34 @@ struct Registration: View {
                       title: "Password",
                       placeholder: "Enter your pasword",
                       isSecureField: true)
-            InputView(text: $confirmPassword,
-                      title: "Confirm Password",
-                      placeholder: "Enter your pasword again",
-                      isSecureField: true)
+            ZStack(alignment: .trailing){
+                InputView(text: $confirmPassword,
+                          title: "Confirm Password",
+                          placeholder: "Enter your pasword again",
+                          isSecureField: true)
+                if !password.isEmpty && !confirmPassword.isEmpty{
+                    if password == confirmPassword {
+                        Image(systemName: "checkmark.circle.fill")
+                            .imageScale(.large)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemGreen))
+                    } else{
+                        Image(systemName: "xmark.circle.fill")
+                            .imageScale(.large)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(.systemRed))
+                    }
+
+                }
+            }
         }
         .padding(.horizontal)
         .padding(.top,12)
         
-        // sign in button
         Button{
-            print("Sign user up..")
+            Task {
+                try await viewModel.createUser(withEmail:email, password: password, fullname: fullname, role: roleManager.ROLE)
+            }
         } label: {
             HStack{
                 Text("SIGN UP")
@@ -55,6 +74,8 @@ struct Registration: View {
             }
             .foregroundColor(.white)
             .frame(width: UIScreen.main.bounds.width - 32, height:48)
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
         }
         .background(Color(.systemBlue))
         .cornerRadius(10)
@@ -75,6 +96,18 @@ struct Registration: View {
     }
 }
 
+extension Registration: AuthenticationFormProtocol{
+    var formIsValid: Bool{
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && confirmPassword == password
+        && !fullname.isEmpty
+    }
+}
+
 #Preview {
     Registration()
+        .environmentObject(RoleManager())
 }

@@ -14,6 +14,9 @@
 		BCBB88562C9028E800269A8B /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB88552C9028E800269A8B /* FirebaseFirestoreCombine-Community */; };
 		BCBB88582C90290900269A8B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB88572C90290900269A8B /* FirebaseStorage */; };
 		BCBB885A2C90290900269A8B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB88592C90290900269A8B /* FirebaseStorageCombine-Community */; };
+		BCBB88642C91EF2300269A8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB88632C91EF2300269A8B /* User.swift */; };
+		BCBB88662C91F46100269A8B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB88652C91F46100269A8B /* AuthViewModel.swift */; };
+		BCBB88682C91F9BC00269A8B /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB88672C91F9BC00269A8B /* RoleManager.swift */; };
 		BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB4C2C74BFDC0021E1C8 /* DearFriendApp.swift */; };
 		BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB4E2C74BFDC0021E1C8 /* ContentView.swift */; };
 		BCD4EB512C74BFDD0021E1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD4EB502C74BFDD0021E1C8 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		BCBB884D2C8FF0EE00269A8B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		BCBB88632C91EF2300269A8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BCBB88652C91F46100269A8B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		BCBB88672C91F9BC00269A8B /* RoleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManager.swift; sourceTree = "<group>"; };
 		BCD4EB492C74BFDC0021E1C8 /* DearFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DearFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD4EB4C2C74BFDC0021E1C8 /* DearFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DearFriendApp.swift; sourceTree = "<group>"; };
 		BCD4EB4E2C74BFDC0021E1C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */,
+				BCBB88652C91F46100269A8B /* AuthViewModel.swift */,
+				BCBB88672C91F9BC00269A8B /* RoleManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 			children = (
 				BCD4EB5D2C77125D0021E1C8 /* ImagePredictor.swift */,
 				BCD4EB742C7B16DB0021E1C8 /* TextRecognizer.swift */,
+				BCBB88632C91EF2300269A8B /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -250,8 +259,11 @@
 				BCD4EB732C7B15460021E1C8 /* VIMainSelectionView.swift in Sources */,
 				BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */,
 				BCBB884E2C8FF0EE00269A8B /* StartView.swift in Sources */,
+				BCBB88662C91F46100269A8B /* AuthViewModel.swift in Sources */,
 				BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */,
+				BCBB88642C91EF2300269A8B /* User.swift in Sources */,
 				BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */,
+				BCBB88682C91F9BC00269A8B /* RoleManager.swift in Sources */,
 				BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */,
 				BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */,
 				BCD4EB752C7B16DB0021E1C8 /* TextRecognizer.swift in Sources */,

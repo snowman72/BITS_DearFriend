@@ -7,12 +7,11 @@
 
 import SwiftUI
 import FirebaseCore
+import Firebase
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-
     return true
   }
 }
@@ -21,10 +20,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct DearFriendApp: App {
     // register app delegate for Firebase setup
       @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
+    @StateObject var viewModel = AuthViewModel()
+
+    init(){
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
