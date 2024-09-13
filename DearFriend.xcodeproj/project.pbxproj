@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC74F4ED2C92ECA100184ADF /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F4EC2C92ECA100184ADF /* ConversationView.swift */; };
+		BC74F4EF2C92ECCF00184ADF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F4EE2C92ECCF00184ADF /* LocationManager.swift */; };
 		BCBB884E2C8FF0EE00269A8B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB884D2C8FF0EE00269A8B /* StartView.swift */; };
 		BCBB88502C9028AF00269A8B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB884F2C9028AF00269A8B /* FirebaseAuth */; };
 		BCBB88522C9028C300269A8B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB88512C9028C300269A8B /* FirebaseDatabase */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC74F4EC2C92ECA100184ADF /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		BC74F4EE2C92ECCF00184ADF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BCBB884D2C8FF0EE00269A8B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		BCBB88632C91EF2300269A8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCBB88652C91F46100269A8B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC74F4EB2C92EC8B00184ADF /* EmergencyAlert */ = {
+			isa = PBXGroup;
+			children = (
+				BC74F4EC2C92ECA100184ADF /* ConversationView.swift */,
+				BC74F4EE2C92ECCF00184ADF /* LocationManager.swift */,
+			);
+			path = EmergencyAlert;
+			sourceTree = "<group>";
+		};
 		BCD4EB402C74BFDC0021E1C8 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		BCD4EB5A2C76F77E0021E1C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC74F4EB2C92EC8B00184ADF /* EmergencyAlert */,
 				BCD4EB762C7C39180021E1C8 /* Authentication */,
 				BCD4EB6D2C7ADF080021E1C8 /* Object+TextRecognition */,
 				BCD4EB722C7B15460021E1C8 /* VIMainSelectionView.swift */,
@@ -262,9 +276,11 @@
 				BCBB88662C91F46100269A8B /* AuthViewModel.swift in Sources */,
 				BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */,
 				BCBB88642C91EF2300269A8B /* User.swift in Sources */,
+				BC74F4EF2C92ECCF00184ADF /* LocationManager.swift in Sources */,
 				BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */,
 				BCBB88682C91F9BC00269A8B /* RoleManager.swift in Sources */,
 				BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */,
+				BC74F4ED2C92ECA100184ADF /* ConversationView.swift in Sources */,
 				BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */,
 				BCD4EB752C7B16DB0021E1C8 /* TextRecognizer.swift in Sources */,
 				BCD4EB7C2C7C399E0021E1C8 /* InputView.swift in Sources */,
@@ -407,6 +423,8 @@
 				DEVELOPMENT_TEAM = QZHA5PV55X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow location access for emergency alerts";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access for emergency alerts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,6 +456,8 @@
 				DEVELOPMENT_TEAM = QZHA5PV55X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow location access for emergency alerts";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access for emergency alerts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

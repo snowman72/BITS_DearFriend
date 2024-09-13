@@ -21,6 +21,7 @@ struct DearFriendApp: App {
     // register app delegate for Firebase setup
       @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject var locationManager = LocationManager()
     @StateObject var viewModel = AuthViewModel()
 
     init(){
@@ -31,6 +32,7 @@ struct DearFriendApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(viewModel)
+                .environmentObject(locationManager)
         }
     }
 }

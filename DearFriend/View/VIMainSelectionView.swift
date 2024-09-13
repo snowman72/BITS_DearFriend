@@ -30,6 +30,10 @@ struct VIMainSelectionView: View {
                     }
                     .buttonStyle(LargeButtonStyle())
                 }
+                
+                NavigationLink("Emergency Alert") {
+                    ConversationView()
+                }
             }
         }
     }
