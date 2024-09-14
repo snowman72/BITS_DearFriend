@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
-    @StateObject var roleManager = RoleManager()  // Create a shared instance
+//    @StateObject var roleManager = RoleManager()  // Create a shared instance
     
     var body: some View {
         NavigationView {
@@ -48,7 +48,9 @@ struct StartView: View {
                                .offset(y:-20)
                 }
 
-                NavigationLink(destination: LoginView().environmentObject(roleManager)) {
+                NavigationLink(destination: LoginView()
+//                    .environmentObject(roleManager)
+                ) {
                         Text("Volunteer")
                             .fontWeight(.semibold)
                             .font(.system(size: 20))
@@ -60,25 +62,25 @@ struct StartView: View {
                             .cornerRadius(10)
                             .offset(y:-20)
                     }
-                    .simultaneousGesture(TapGesture().onEnded {
-                        roleManager.ROLE = "Volunteer"
-                    })
+//                    .simultaneousGesture(TapGesture().onEnded {
+//                        roleManager.ROLE = "Volunteer"
+//                    })
 
-                NavigationLink(destination: LoginView().environmentObject(roleManager)) {
-                        Text("Family Member")
-                            .fontWeight(.semibold)
-                            .font(.system(size: 20))
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .offset(y:-20)
-                    }
-                    .simultaneousGesture(TapGesture().onEnded {
-                        roleManager.ROLE = "FamilyMember"
-                    })
+//                NavigationLink(destination: LoginView().environmentObject(roleManager)) {
+//                        Text("Family Member")
+//                            .fontWeight(.semibold)
+//                            .font(.system(size: 20))
+//                            .frame(maxWidth: .infinity)
+//                            .frame(height: 50)
+//                            .padding()
+//                            .background(Color.blue)
+//                            .foregroundColor(.white)
+//                            .cornerRadius(10)
+//                            .offset(y:-20)
+//                    }
+//                    .simultaneousGesture(TapGesture().onEnded {
+//                        roleManager.ROLE = "FamilyMember"
+//                    })
             }
             .padding()
         

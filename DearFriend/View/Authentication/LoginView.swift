@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView:View {
     @EnvironmentObject var viewModel: AuthViewModel
-    @EnvironmentObject var roleManager: RoleManager
+//    @EnvironmentObject var roleManager: RoleManager
     @State private var email = ""
     @State private var password = ""
    
@@ -61,7 +61,7 @@ struct LoginView:View {
                 NavigationLink{
                     Registration()
                         .navigationBarBackButtonHidden(true)
-                        .environmentObject(roleManager)
+//                        .environmentObject(roleManager)
                     
                 } label: {
                     HStack{

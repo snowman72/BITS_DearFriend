@@ -14,7 +14,7 @@ struct Registration: View {
     @State private var confirmPassword = ""
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
-    @EnvironmentObject var roleManager: RoleManager
+//    @EnvironmentObject var roleManager: RoleManager
     
     var body: some View {
         VStack{
@@ -64,7 +64,7 @@ struct Registration: View {
         
         Button{
             Task {
-                try await viewModel.createUser(withEmail:email, password: password, fullname: fullname, role: roleManager.ROLE)
+                try await viewModel.createUser(withEmail:email, password: password, fullname: fullname)
             }
         } label: {
             HStack{
@@ -109,5 +109,5 @@ extension Registration: AuthenticationFormProtocol{
 
 #Preview {
     Registration()
-        .environmentObject(RoleManager())
+//        .environmentObject(RoleManager())
 }
