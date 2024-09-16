@@ -116,6 +116,7 @@ struct ProfileView: View {
             .background(Color(red: 247/255, green: 245/255, blue: 255/255))
             .navigationBarTitle("Profile", displayMode: .inline)
             .toolbar {
+                // back to home button
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Home") {
                         navigateToHome = true
@@ -129,6 +130,7 @@ struct ProfileView: View {
                     .foregroundColor(.white)
                     .clipShape(RoundedCorner(radius: 10))
                 }
+                // edit button
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Edit") {
@@ -142,6 +144,18 @@ struct ProfileView: View {
                     .background(Color(red: 0, green: 0, blue: 1))
                     .foregroundColor(.white)
                     .clipShape(RoundedCorner(radius: 10))
+                }
+                // sign out button
+                ToolbarItem(placement: .bottomBar) {
+                    Button("Log Out") {
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                     .foregroundColor(.white)
+                     .padding()
+                     .background(Color(red: 0, green: 0, blue: 1))
+                     .cornerRadius(10)
+                     .buttonStyle(.bordered)
+                     .font(.title3.bold())
                 }
             }
             .navigationDestination(isPresented: $navigateToHome) {
