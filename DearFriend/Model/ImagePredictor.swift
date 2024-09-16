@@ -1,6 +1,6 @@
 //
 //  ImagePredictor.swift
-//  RealTimeObjectDetection
+//  DearFriend
 //
 //  Created by Vũ Minh Hà on 13/8/24.
 //
