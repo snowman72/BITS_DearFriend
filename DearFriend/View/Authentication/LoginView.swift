@@ -9,9 +9,9 @@ import SwiftUI
 
 struct LoginView:View {
     @EnvironmentObject var viewModel: AuthViewModel
-//    @EnvironmentObject var roleManager: RoleManager
     @State private var email = ""
     @State private var password = ""
+    @State private var showlogInFailMessage = false
    
     var body: some View{
         NavigationStack{
@@ -37,10 +37,16 @@ struct LoginView:View {
                 .padding(.horizontal)
                 .padding(.top,12)
                 
+                
                 // sign in button
-                Button{
-                    Task{
-                        try await viewModel.signIn(withEmail: email, password: password)
+                Button {
+                    Task {
+                        do {
+                            try await viewModel.signIn(withEmail: email, password: password)
+                        } catch {
+                            showlogInFailMessage = true
+                            print("Sign in failed: \(error.localizedDescription)")
+                        }
                     }
                 } label: {
                     HStack{
@@ -56,12 +62,16 @@ struct LoginView:View {
                 .opacity(formIsValid ? 1.0 : 0.5)
                 .cornerRadius(10)
                 
+                
+                Text(showlogInFailMessage == true ? "Incorrect email or password" : "")
+                    .font(.callout)
+                    .foregroundStyle(Color.red)
+                
                 Spacer()
                 // sign up button
                 NavigationLink{
                     Registration()
                         .navigationBarBackButtonHidden(true)
-//                        .environmentObject(roleManager)
                     
                 } label: {
                     HStack{
@@ -85,8 +95,3 @@ extension LoginView: AuthenticationFormProtocol{
     }
 }
 
-struct LoginView_Previews: PreviewProvider{
-    static var previews: some View{
-        LoginView()
-    }
-}

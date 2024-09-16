@@ -22,7 +22,7 @@ struct DearFriendApp: App {
       @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @StateObject var locationManager = LocationManager()
-    @StateObject var viewModel = AuthViewModel()
+    @StateObject var authViewModel = AuthViewModel()
 
     init(){
         FirebaseApp.configure()
@@ -31,7 +31,7 @@ struct DearFriendApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(viewModel)
+                .environmentObject(authViewModel)
                 .environmentObject(locationManager)
         }
     }

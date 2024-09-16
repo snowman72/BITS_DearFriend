@@ -9,17 +9,24 @@ import Foundation
 
 struct User:Identifiable,Codable{
     let id: String
-    let fullname: String
-    let email: String
-//    let ROLE: String
+    let name: String
+    let email: String?
+    var imageURL: URL?
     var initials: String{
         let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: fullname){
+        if let components = formatter.personNameComponents(from: name){
             formatter.style = .abbreviated
             return formatter.string(from: components)
         }
         
         return ""
+    }
+    
+    init(id: String, name: String, email: String? = nil, imageURL: URL? = nil) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.imageURL = imageURL
     }
 }
 
