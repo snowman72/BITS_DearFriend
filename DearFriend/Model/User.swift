@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Volunteer.swift
 //  DearFriend
 //
 //  Created by Tony Nguyen on 2024-09-10.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User:Identifiable,Codable{
+struct Volunteer:Identifiable,Codable{
     let id: String
     let name: String
     let email: String?

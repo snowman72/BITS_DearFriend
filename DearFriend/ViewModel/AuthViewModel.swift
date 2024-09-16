@@ -17,8 +17,8 @@ protocol AuthenticationFormProtocol{
 @MainActor
 class AuthViewModel: ObservableObject{
     @Published var userSession: FirebaseAuth.User?
-    @Published var currentUser: User?
-    @Published var callManager = CallManager()
+    @Published var currentUser: Volunteer?
+//    @Published var callManager = CallManager()
 
     init(){
         self.userSession = Auth.auth().currentUser
@@ -50,7 +50,7 @@ class AuthViewModel: ObservableObject{
         do{
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
-            let user = User(id: result.user.uid, name: name, email: email)
+            let user = Volunteer(id: result.user.uid, name: name, email: email)
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
 //            await fetchUser()
@@ -64,18 +64,19 @@ class AuthViewModel: ObservableObject{
             try Auth.auth().signOut()
             self.userSession = nil
             self.currentUser = nil
-            self.callManager = CallManager() // Reset call manager
+//            self.callManager = CallManager() // Reset call manager
         } catch{
             print("Sign out error (DEBUG): \(error.localizedDescription)")
         }
     }
-    func fetchUser() async throws -> User {
+
+    func fetchUser() async throws -> Volunteer {
         guard let uid = Auth.auth().currentUser?.uid else{
             throw NSError(domain: "Authentication", code: 401, userInfo: [NSLocalizedDescriptionKey: "No authenticated user"])
         }
 
         let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument()
-        guard let currentUser = try? snapshot?.data(as: User.self) else {
+        guard let currentUser = try? snapshot?.data(as: Volunteer.self) else {
             throw NSError(domain: "Firestore", code: 404, userInfo: [NSLocalizedDescriptionKey: "Failed to decode user data"])
         }
         

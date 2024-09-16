@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		BC74F4ED2C92ECA100184ADF /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F4EC2C92ECA100184ADF /* ConversationView.swift */; };
 		BC74F4EF2C92ECCF00184ADF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F4EE2C92ECCF00184ADF /* LocationManager.swift */; };
+		BC74F5172C98459300184ADF /* Login_VolunteerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F5152C98459300184ADF /* Login_VolunteerHome.swift */; };
+		BC74F5192C98459B00184ADF /* VolunteerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F5182C98459B00184ADF /* VolunteerHome.swift */; };
+		BC74F51C2C9845C600184ADF /* StreamVideo in Frameworks */ = {isa = PBXBuildFile; productRef = BC74F51B2C9845C600184ADF /* StreamVideo */; };
+		BC74F51E2C9845C600184ADF /* StreamVideoSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = BC74F51D2C9845C600184ADF /* StreamVideoSwiftUI */; };
+		BC74F5202C9845C600184ADF /* StreamVideoUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = BC74F51F2C9845C600184ADF /* StreamVideoUIKit */; };
+		BC74F5232C9846B700184ADF /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F5222C9846B700184ADF /* CallView.swift */; };
+		BC74F5252C9846D400184ADF /* FloatingParticipantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F5242C9846D400184ADF /* FloatingParticipantView.swift */; };
+		BC74F5272C9846E900184ADF /* ParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC74F5262C9846E900184ADF /* ParticipantsView.swift */; };
 		BCBB884E2C8FF0EE00269A8B /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB884D2C8FF0EE00269A8B /* StartView.swift */; };
 		BCBB88502C9028AF00269A8B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB884F2C9028AF00269A8B /* FirebaseAuth */; };
 		BCBB88522C9028C300269A8B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB88512C9028C300269A8B /* FirebaseDatabase */; };
@@ -18,7 +26,6 @@
 		BCBB885A2C90290900269A8B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB88592C90290900269A8B /* FirebaseStorageCombine-Community */; };
 		BCBB88642C91EF2300269A8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB88632C91EF2300269A8B /* User.swift */; };
 		BCBB88662C91F46100269A8B /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB88652C91F46100269A8B /* AuthViewModel.swift */; };
-		BCBB88682C91F9BC00269A8B /* RoleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB88672C91F9BC00269A8B /* RoleManager.swift */; };
 		BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB4C2C74BFDC0021E1C8 /* DearFriendApp.swift */; };
 		BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4EB4E2C74BFDC0021E1C8 /* ContentView.swift */; };
 		BCD4EB512C74BFDD0021E1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD4EB502C74BFDD0021E1C8 /* Assets.xcassets */; };
@@ -39,10 +46,14 @@
 /* Begin PBXFileReference section */
 		BC74F4EC2C92ECA100184ADF /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		BC74F4EE2C92ECCF00184ADF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BC74F5152C98459300184ADF /* Login_VolunteerHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_VolunteerHome.swift; sourceTree = "<group>"; };
+		BC74F5182C98459B00184ADF /* VolunteerHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolunteerHome.swift; sourceTree = "<group>"; };
+		BC74F5222C9846B700184ADF /* CallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
+		BC74F5242C9846D400184ADF /* FloatingParticipantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingParticipantView.swift; sourceTree = "<group>"; };
+		BC74F5262C9846E900184ADF /* ParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsView.swift; sourceTree = "<group>"; };
 		BCBB884D2C8FF0EE00269A8B /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		BCBB88632C91EF2300269A8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BCBB88652C91F46100269A8B /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		BCBB88672C91F9BC00269A8B /* RoleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleManager.swift; sourceTree = "<group>"; };
 		BCD4EB492C74BFDC0021E1C8 /* DearFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DearFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD4EB4C2C74BFDC0021E1C8 /* DearFriendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DearFriendApp.swift; sourceTree = "<group>"; };
 		BCD4EB4E2C74BFDC0021E1C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,11 +77,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC74F51E2C9845C600184ADF /* StreamVideoSwiftUI in Frameworks */,
 				BCBB88522C9028C300269A8B /* FirebaseDatabase in Frameworks */,
 				BCBB88502C9028AF00269A8B /* FirebaseAuth in Frameworks */,
 				BCBB88562C9028E800269A8B /* FirebaseFirestoreCombine-Community in Frameworks */,
 				BCBB88582C90290900269A8B /* FirebaseStorage in Frameworks */,
 				BCBB885A2C90290900269A8B /* FirebaseStorageCombine-Community in Frameworks */,
+				BC74F51C2C9845C600184ADF /* StreamVideo in Frameworks */,
+				BC74F5202C9845C600184ADF /* StreamVideoUIKit in Frameworks */,
 				BCBB88542C9028E800269A8B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +99,24 @@
 				BC74F4EE2C92ECCF00184ADF /* LocationManager.swift */,
 			);
 			path = EmergencyAlert;
+			sourceTree = "<group>";
+		};
+		BC74F5162C98459300184ADF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BC74F5152C98459300184ADF /* Login_VolunteerHome.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		BC74F5212C98466B00184ADF /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				BC74F5242C9846D400184ADF /* FloatingParticipantView.swift */,
+				BC74F5262C9846E900184ADF /* ParticipantsView.swift */,
+				BC74F5222C9846B700184ADF /* CallView.swift */,
+			);
+			path = VideoCall;
 			sourceTree = "<group>";
 		};
 		BCD4EB402C74BFDC0021E1C8 = {
@@ -130,10 +162,13 @@
 		BCD4EB5A2C76F77E0021E1C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC74F5162C98459300184ADF /* Navigation */,
 				BC74F4EB2C92EC8B00184ADF /* EmergencyAlert */,
 				BCD4EB762C7C39180021E1C8 /* Authentication */,
 				BCD4EB6D2C7ADF080021E1C8 /* Object+TextRecognition */,
+				BC74F5212C98466B00184ADF /* VideoCall */,
 				BCD4EB722C7B15460021E1C8 /* VIMainSelectionView.swift */,
+				BC74F5182C98459B00184ADF /* VolunteerHome.swift */,
 				BCBB884D2C8FF0EE00269A8B /* StartView.swift */,
 			);
 			path = View;
@@ -144,7 +179,6 @@
 			children = (
 				BCD4EB662C7713EB0021E1C8 /* CameraViewModel.swift */,
 				BCBB88652C91F46100269A8B /* AuthViewModel.swift */,
-				BCBB88672C91F9BC00269A8B /* RoleManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -209,6 +243,9 @@
 				BCBB88552C9028E800269A8B /* FirebaseFirestoreCombine-Community */,
 				BCBB88572C90290900269A8B /* FirebaseStorage */,
 				BCBB88592C90290900269A8B /* FirebaseStorageCombine-Community */,
+				BC74F51B2C9845C600184ADF /* StreamVideo */,
+				BC74F51D2C9845C600184ADF /* StreamVideoSwiftUI */,
+				BC74F51F2C9845C600184ADF /* StreamVideoUIKit */,
 			);
 			productName = DearFriend;
 			productReference = BCD4EB492C74BFDC0021E1C8 /* DearFriend.app */;
@@ -240,6 +277,7 @@
 			mainGroup = BCD4EB402C74BFDC0021E1C8;
 			packageReferences = (
 				BCD4EB8E2C7CC8300021E1C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BC74F51A2C9845C600184ADF /* XCRemoteSwiftPackageReference "stream-video-swift" */,
 			);
 			productRefGroup = BCD4EB4A2C74BFDC0021E1C8 /* Products */;
 			projectDirPath = "";
@@ -269,16 +307,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD4EB632C77137A0021E1C8 /* CameraPreview.swift in Sources */,
+				BC74F5252C9846D400184ADF /* FloatingParticipantView.swift in Sources */,
+				BC74F5172C98459300184ADF /* Login_VolunteerHome.swift in Sources */,
 				BCD4EB7A2C7C39760021E1C8 /* Registration.swift in Sources */,
+				BC74F5272C9846E900184ADF /* ParticipantsView.swift in Sources */,
 				BCD4EB732C7B15460021E1C8 /* VIMainSelectionView.swift in Sources */,
 				BCD4EB4F2C74BFDC0021E1C8 /* ContentView.swift in Sources */,
 				BCBB884E2C8FF0EE00269A8B /* StartView.swift in Sources */,
 				BCBB88662C91F46100269A8B /* AuthViewModel.swift in Sources */,
 				BCD4EB5E2C77125D0021E1C8 /* ImagePredictor.swift in Sources */,
+				BC74F5232C9846B700184ADF /* CallView.swift in Sources */,
 				BCBB88642C91EF2300269A8B /* User.swift in Sources */,
 				BC74F4EF2C92ECCF00184ADF /* LocationManager.swift in Sources */,
 				BCD4EB672C7713EB0021E1C8 /* CameraViewModel.swift in Sources */,
-				BCBB88682C91F9BC00269A8B /* RoleManager.swift in Sources */,
+				BC74F5192C98459B00184ADF /* VolunteerHome.swift in Sources */,
 				BCD4EB4D2C74BFDC0021E1C8 /* DearFriendApp.swift in Sources */,
 				BC74F4ED2C92ECA100184ADF /* ConversationView.swift in Sources */,
 				BCD4EB692C77212B0021E1C8 /* MobileNet.mlmodel in Sources */,
@@ -423,8 +465,10 @@
 				DEVELOPMENT_TEAM = QZHA5PV55X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera for video calling";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow location access for emergency alerts";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access for emergency alerts";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone for video calling";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -456,8 +500,10 @@
 				DEVELOPMENT_TEAM = QZHA5PV55X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow camera for video calling";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow location access for emergency alerts";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access for emergency alerts";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please allow microphone for video calling";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -501,6 +547,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BC74F51A2C9845C600184ADF /* XCRemoteSwiftPackageReference "stream-video-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GetStream/stream-video-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.0;
+			};
+		};
 		BCD4EB8E2C7CC8300021E1C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -512,6 +566,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BC74F51B2C9845C600184ADF /* StreamVideo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC74F51A2C9845C600184ADF /* XCRemoteSwiftPackageReference "stream-video-swift" */;
+			productName = StreamVideo;
+		};
+		BC74F51D2C9845C600184ADF /* StreamVideoSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC74F51A2C9845C600184ADF /* XCRemoteSwiftPackageReference "stream-video-swift" */;
+			productName = StreamVideoSwiftUI;
+		};
+		BC74F51F2C9845C600184ADF /* StreamVideoUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC74F51A2C9845C600184ADF /* XCRemoteSwiftPackageReference "stream-video-swift" */;
+			productName = StreamVideoUIKit;
+		};
 		BCBB884F2C9028AF00269A8B /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BCD4EB8E2C7CC8300021E1C8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
