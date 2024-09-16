@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
-//    @StateObject var roleManager = RoleManager()  // Create a shared instance
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -34,60 +34,45 @@ struct StartView: View {
                     .padding(.bottom, 50)
                     .offset(y: -70)
                     .foregroundColor(.blue)
-
+                
                 NavigationLink(destination: VIMainSelectionView()) {
                     Text("Visually Imparied")
                         .fontWeight(.semibold)
-                               .font(.system(size: 20))
-                               .frame(maxWidth: .infinity)
-                               .frame(height: 50)
-                               .padding()
-                               .background(Color.red)
-                               .foregroundColor(.white)
-                               .cornerRadius(10)
-                               .offset(y:-20)
+                        .font(.system(size: 20))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .offset(y:-20)
                 }
-
-                NavigationLink(destination: LoginView()
-//                    .environmentObject(roleManager)
+                
+                NavigationLink(destination: Login_VolunteerHome()
                 ) {
-                        Text("Volunteer")
-                            .fontWeight(.semibold)
-                            .font(.system(size: 20))
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 50)
-                            .padding()
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                            .offset(y:-20)
-                    }
-//                    .simultaneousGesture(TapGesture().onEnded {
-//                        roleManager.ROLE = "Volunteer"
-//                    })
-
-//                NavigationLink(destination: LoginView().environmentObject(roleManager)) {
-//                        Text("Family Member")
-//                            .fontWeight(.semibold)
-//                            .font(.system(size: 20))
-//                            .frame(maxWidth: .infinity)
-//                            .frame(height: 50)
-//                            .padding()
-//                            .background(Color.blue)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                            .offset(y:-20)
-//                    }
-//                    .simultaneousGesture(TapGesture().onEnded {
-//                        roleManager.ROLE = "FamilyMember"
-//                    })
+                    Text("Volunteer")
+                        .fontWeight(.semibold)
+                        .font(.system(size: 20))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .offset(y:-20)
+                }
             }
             .padding()
-        
         }
     }
+    
+//    @ViewBuilder
+//    var destinationView: some View {
+//        if authViewModel.currentUser?.email != nil  {
+//            VolunteerHome()
+//        } else {
+//            LoginView()
+//        }
+//    }
 }
 
-#Preview {
-    StartView()
-}
