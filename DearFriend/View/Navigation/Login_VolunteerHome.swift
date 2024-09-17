@@ -13,7 +13,7 @@ struct Login_VolunteerHome: View {
     var body: some View {
         ZStack {
             if (authViewModel.userSession != nil) {
-                VolunteerHome()
+                VolunteerHome_ProfileView()
             } else {
                 LoginView()
             }

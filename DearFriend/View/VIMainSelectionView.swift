@@ -9,10 +9,9 @@ import SwiftUI
 
 struct VIMainSelectionView: View {
     @State private var selectedMode: CameraViewModel.RecognitionMode?
+    @Binding var isShowStartView: Bool
     
     var body: some View {
-        
-            
         NavigationView {
             ZStack {
                 Image("background")
@@ -21,10 +20,26 @@ struct VIMainSelectionView: View {
                     .ignoresSafeArea()
                 
                 VStack(spacing: 20) {
+                    Button(action: {
+                        isShowStartView = true
+                    }, label: {
+                        Circle()
+                            .frame(width: 80)
+                            .foregroundColor(Color.clear)
+                            .padding()
+                            .overlay {
+                                Image(systemName: "house.fill")
+                                    .font(.system(size: 55))
+                                    .foregroundColor(.white)
+                                    
+                            }
+                    })
+                    .offset(x: -140)
+    
                     Text("Choose a mode")
                         .font(.largeTitle)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        .padding()
+                        .padding(.top, 50)
                         
                     
                     Spacer()
@@ -80,7 +95,8 @@ struct VIMainSelectionView: View {
                     .font(.title3.bold())
                     .padding(.horizontal)
                 }
-                .padding(.vertical, 100)
+                .padding(.bottom, 80)
+                .padding(.top, 50)
             }
         
         }
@@ -100,5 +116,5 @@ struct LargeButtonStyle: ButtonStyle {
 }
 
 #Preview {
-    VIMainSelectionView()
+    VIMainSelectionView(isShowStartView: .constant(true))
 }

@@ -13,12 +13,18 @@ struct VolunteerHome: View {
     @EnvironmentObject var authViewModel: AuthViewModel
 //    @EnvironmentObject var callManager: CallManager
     @State var signOutSuccess = false
-    @State private var showingIncomingCall = true
+//    @State private var showingIncomingCall = true
+    @Binding var isShowProfileView: Bool
     
     var body: some View {
         ZStack {
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea(.all)
+            
             if (signOutSuccess == true) {
-                StartView()
+                StartView(isShowStartView: .constant(true))
                 
 //            } else if (showingIncomingCall) {
 //                VStack {
@@ -61,11 +67,18 @@ struct VolunteerHome: View {
 
             } else {
                 VStack {
+                    Button {
+                        isShowProfileView = true
+                    } label: {
+                        ProfileIcon()
+                            .frame(width: 80, height: 80)
+                    }
+                    .offset(x: 130)
+                    
                     Spacer()
                     
                     Text("Hello \(authViewModel.currentUser?.name ?? "there")! Looks like you have no call at the moment")
                     
-//                    Spacer()
                     
                     Image("sleep")
                         .resizable()
@@ -79,22 +92,25 @@ struct VolunteerHome: View {
                     }) {
                         Text("Sign Out")
                             .foregroundColor(.white)
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+                            .frame(maxWidth: .infinity, minHeight: 48)
                             .background(Color.red)
                             .cornerRadius(10)
                     }
-                    .padding()
+                    
                 }
+                .padding(.bottom, 80)
+                .padding(.top, 50)
+                .padding(.horizontal)
             }
         }
-        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("IncomingCall"))) { _ in
-                    showingIncomingCall = true
-                }
+//        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("IncomingCall"))) { _ in
+//                    showingIncomingCall = true
+//                }
     }
 }
 
 #Preview {
-    VolunteerHome()
+    VolunteerHome(isShowProfileView: .constant(false))
         .environmentObject(AuthViewModel())
 //        .environmentObject(CallManager())
 }
