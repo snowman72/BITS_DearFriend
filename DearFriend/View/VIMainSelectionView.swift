@@ -40,6 +40,7 @@ struct VIMainSelectionView: View {
                         .font(.largeTitle)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                         .padding(.top, 50)
+                        .foregroundColor(.black)
                         
                     
                     Spacer()
@@ -53,7 +54,7 @@ struct VIMainSelectionView: View {
                         .padding()
                         .background(Color.pink)
                         .cornerRadius(10)
-                        .font(.title3.bold())
+                        .font(.title2.bold())
                     }
                     .padding(.horizontal)
                     
@@ -67,7 +68,7 @@ struct VIMainSelectionView: View {
                         .padding()
                         .background(Color.cyan)
                         .cornerRadius(10)
-                        .font(.title3.bold())
+                        .font(.title2.bold())
                     }
                     .padding(.horizontal)
                     
@@ -80,11 +81,11 @@ struct VIMainSelectionView: View {
                     .padding()
                     .background(Color.orange)
                     .cornerRadius(10)
-                    .font(.title3.bold())
+                    .font(.title2.bold())
                     .padding(.horizontal)
                     
                     
-                    NavigationLink("Join Call") {
+                    NavigationLink("Call a Volunteer") {
                         CallView()
                     }
                     .frame(maxWidth: .infinity, minHeight: 50, alignment: .center)
@@ -92,7 +93,7 @@ struct VIMainSelectionView: View {
                     .padding()
                     .background(Color.indigo)
                     .cornerRadius(10)
-                    .font(.title3.bold())
+                    .font(.title2.bold())
                     .padding(.horizontal)
                 }
                 .padding(.bottom, 80)

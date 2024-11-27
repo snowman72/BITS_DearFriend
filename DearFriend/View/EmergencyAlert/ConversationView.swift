@@ -13,20 +13,41 @@ struct ConversationView: View {
     @State var message = ""
 
     var body: some View {
-        VStack {
-            TextField("Enter phone number", text: $numberToMessage)
-            .padding(.vertical)
-            TextField("Enter your message",text: $message)
+        ZStack {
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+            
+            VStack {
+                TextField("Enter phone number", text: $numberToMessage)
+                    .padding(.bottom, 20)
+                    .font(.title2)
+                    .foregroundColor(.black)
+                
+                TextField("Enter your message",text: $message)
+                    .font(.title2)
+                    .foregroundColor(.black)
+                    .padding(.bottom, 30)
 
-            Button(action: {
-                sendMessage()
-            }, label: {
-                Text("Send Message")
-                    .font(.title)
-                    .foregroundStyle(Color.blue)
-            })
+                Button(action: {
+                    sendMessage()
+                }, label: {
+                    Text("Send Message")
+                        .font(.title)
+                        .foregroundStyle(Color.blue)
+                })
+            }
+            .padding(.vertical, 30)
+            .padding(.horizontal, 20)
+            .background {
+                Rectangle()
+                    .foregroundColor(.white)
+                    .cornerRadius(30)
+                    .shadow(radius: 4)
+            }
+            .padding()
         }
-        .padding()
     }
 
     func sendMessage() {

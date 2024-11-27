@@ -60,7 +60,7 @@ struct StartView: View {
                     }, label: {
                         Text("Visually Imparied")
                             .fontWeight(.semibold)
-                            .font(.system(size: 20))
+                            .font(.system(size: 22))
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .padding()
@@ -74,7 +74,7 @@ struct StartView: View {
                     ) {
                         Text("Volunteer")
                             .fontWeight(.semibold)
-                            .font(.system(size: 20))
+                            .font(.system(size: 22))
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .padding()
