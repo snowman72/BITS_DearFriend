@@ -20,33 +20,89 @@ struct ConversationView: View {
                 .ignoresSafeArea()
             
             VStack {
-                TextField("Enter phone number", text: $numberToMessage)
-                    .padding(.bottom, 20)
-                    .font(.title2)
-                    .foregroundColor(.black)
+                Spacer()
                 
-                TextField("Enter your message",text: $message)
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .padding(.bottom, 30)
+                Text("Emergency\n Alert")
+                    .font(.system(size: 45))
+                    .foregroundColor(Color.pink)
+                    .fontWeight(.heavy)
+                    .padding(.bottom, 50)
+                    .multilineTextAlignment(.center)
+                
+                
+                VStack {
+                    HStack {
+                        Image(systemName: "phone.fill")
+                            .resizable()
+                            .foregroundColor(Color.blue)
+                            .frame(width: 30, height: 30)
+                            .scaledToFit()
+                            .padding(.trailing, 10)
+                        
+                        TextField("Enter phone number", text: $numberToMessage)
+                            .font(.title)
+                            .foregroundColor(.black)
+                            .padding(10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5.0)
+                                    .stroke(lineWidth: 0.7)
+                                    .foregroundColor(Color.gray)
+                            )
+                        
+                    }
+                    .padding(.bottom, 20)
+                    
+                    HStack {
+                        Image(systemName: "ellipsis.message.fill")
+                            .resizable()
+                            .foregroundColor(Color.blue)
+                            .frame(width: 30, height: 30)
+                            .scaledToFit()
+                            .padding(.trailing, 10)
+                        
+                        TextField("Enter your message",text: $message)
+                            .font(.title)
+                            .foregroundColor(.black)
+                            .padding(10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 5.0)
+                                    .stroke(lineWidth: 0.7)
+                                    .foregroundColor(Color.gray)
+                            )
+                        
+                        
+                        
+                    }
+                    .padding(.bottom, 20)
+                    
+                    Button(action: {
+                        sendMessage()
+                    }, label: {
+                        Text("Send Message")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color.white)
+                            .frame(width: 340, height: 65)
+                            .background(Color.pink)
+                            .cornerRadius(20)
+                            .padding(.top, 20)
+                    })
+                }
+                .padding(.vertical, 50)
+                .padding(.horizontal, 30)
+                .background {
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .cornerRadius(30)
+                        .shadow(radius: 4)
+                }
 
-                Button(action: {
-                    sendMessage()
-                }, label: {
-                    Text("Send Message")
-                        .font(.title)
-                        .foregroundStyle(Color.blue)
-                })
+                
+                Spacer()
+                Spacer()
             }
-            .padding(.vertical, 30)
-            .padding(.horizontal, 20)
-            .background {
-                Rectangle()
-                    .foregroundColor(.white)
-                    .cornerRadius(30)
-                    .shadow(radius: 4)
-            }
-            .padding()
+            .padding(.vertical)
+            .padding(.horizontal, 10)
         }
     }
 

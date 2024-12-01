@@ -14,20 +14,43 @@ struct InputView: View{
     var isSecureField = false
     
     var body: some View{
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading) {
             Text(title)
                 .foregroundColor(Color(.darkGray))
                 .fontWeight(.semibold)
-                .font(.footnote)
+                .font(.title3)
+                .padding(.bottom)
             if isSecureField{
                 SecureField(placeholder, text: $text)
-                    .font(.system(size: 14))
+                    .font(.title3)
+                    .padding(.horizontal)
+                    .background(
+                        Rectangle()
+                            .foregroundColor(Color.white)
+                            .frame(height: 60)
+                            .cornerRadius(10)
+                            .background(
+                                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                                    .stroke(Color.black, lineWidth: 0.5)
+                            )
+                        )
             } else{
                 TextField(placeholder, text: $text)
-                    .font(.system(size: 14))
+                    .font(.title3)
+                    .padding(.horizontal)
+                    .background(
+                        Rectangle()
+                            .foregroundColor(Color.white)
+                            .frame(height: 60)
+                            .cornerRadius(10)
+                            .background(
+                                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                                    .stroke(Color.black, lineWidth: 0.5)
+                            )
+                        )
             }
             
-            Divider()
+//            Divider()
         }
     }
 }

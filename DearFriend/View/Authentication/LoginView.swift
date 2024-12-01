@@ -14,8 +14,12 @@ struct LoginView:View {
     @State private var showlogInFailMessage = false
    
     var body: some View{
-        NavigationStack{
+        NavigationView{
             VStack{
+                Text("Login")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                
                 // logo
                 Image("logo")
                     .resizable()
@@ -29,6 +33,8 @@ struct LoginView:View {
                               title: "Email",
                               placeholder: "name@example.com")
                     .autocapitalization(.none)
+                    .padding(.bottom)
+                    
                     InputView(text: $password,
                               title: "Password",
                               placeholder: "Enter your pasword",
@@ -36,6 +42,23 @@ struct LoginView:View {
                 }
                 .padding(.horizontal)
                 .padding(.top,12)
+                
+                HStack{
+                    Text("Don't have an account?")
+                        .foregroundStyle(Color.blue)
+                    // sign up button
+                    NavigationLink{
+                        Registration()
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Text("Sign up")
+                            .underline()
+                            .fontWeight(.bold)
+                    }
+                }
+                .font(.system(size: 14))
+                .padding(.top, 20)
+                .padding(.leading, UIScreen.main.bounds.width/3)
                 
                 
                 // sign in button
@@ -52,15 +75,18 @@ struct LoginView:View {
                     HStack{
                         Text("SIGN IN")
                             .fontWeight(.semibold)
+                            .font(.title2)
                         Image(systemName: "arrow.right")
                     }
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.main.bounds.width - 32, height:48)
+                    .frame(width: UIScreen.main.bounds.width - 65, height:70)
+                    .background(Color(.systemBlue))
+                    .opacity(formIsValid ? 1.0 : 0.5)
+                    .cornerRadius(10)
+                    .padding(.top, 40)
                 }
-                .background(Color(.systemBlue))
                 .disabled(!formIsValid)
-                .opacity(formIsValid ? 1.0 : 0.5)
-                .cornerRadius(10)
+                
                 
                 
                 Text(showlogInFailMessage == true ? "Incorrect email or password" : "")
@@ -68,20 +94,15 @@ struct LoginView:View {
                     .foregroundStyle(Color.red)
                 
                 Spacer()
-                // sign up button
-                NavigationLink{
-                    Registration()
-                        .navigationBarBackButtonHidden(true)
-                    
-                } label: {
-                    HStack{
-                        Text("Don't have an account")
-                        Text("Sign up")
-                            .fontWeight(.bold)
-                    }
-                    .font(.system(size: 14))
-                }
+                
             }
+            .padding()
+            .background(
+                Image("background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+            )
         }
     }
 }
@@ -95,3 +116,6 @@ extension LoginView: AuthenticationFormProtocol{
     }
 }
 
+#Preview {
+    LoginView()
+}

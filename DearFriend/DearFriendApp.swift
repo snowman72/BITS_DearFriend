@@ -23,33 +23,33 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-        let token = tokenParts.joined()
-        print("Device Token: \(token)")
-        // Send this token to your server
-    }
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+//        let token = tokenParts.joined()
+//        print("Device Token: \(token)")
+//        // Send this token to your server
+//    }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        if let aps = userInfo["aps"] as? [String: AnyObject] {
-            if let alert = aps["alert"] as? String {
-                if alert == "Incoming call" {
-                    handleIncomingCall(userInfo: userInfo)
-                }
-            }
-        }
-        completionHandler(.newData)
-    }
+//    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        if let aps = userInfo["aps"] as? [String: AnyObject] {
+//            if let alert = aps["alert"] as? String {
+//                if alert == "Incoming call" {
+//                    handleIncomingCall(userInfo: userInfo)
+//                }
+//            }
+//        }
+//        completionHandler(.newData)
+//    }
 
-    func handleIncomingCall(userInfo: [AnyHashable : Any]) {
-        let content = UNMutableNotificationContent()
-        content.title = "Incoming Call"
-        content.body = "You receive a call from a visually-impaired"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName("ringtone.mp3"))
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request)
-    }
+//    func handleIncomingCall(userInfo: [AnyHashable : Any]) {
+//        let content = UNMutableNotificationContent()
+//        content.title = "Incoming Call"
+//        content.body = "You receive a call from a visually-impaired"
+//        content.sound = UNNotificationSound(named: UNNotificationSoundName("ringtone.mp3"))
+//        
+//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+//        UNUserNotificationCenter.current().add(request)
+//    }
 }
 
 @main
@@ -63,7 +63,6 @@ struct DearFriendApp: App {
     init(){
         FirebaseApp.configure()
     }
-//    @StateObject var callManager = CallManager()
     
 
     var body: some Scene {
@@ -71,7 +70,6 @@ struct DearFriendApp: App {
             ContentView()
                 .environmentObject(authViewModel)
                 .environmentObject(locationManager)
-//                .environmentObject(callManager)
         }
     }
 }

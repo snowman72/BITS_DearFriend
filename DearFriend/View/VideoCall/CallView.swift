@@ -17,7 +17,8 @@ struct CallView: View {
     private let apiKey: String = "mmhfdzb5evj2"
     private let token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3Byb250by5nZXRzdHJlYW0uaW8iLCJzdWIiOiJ1c2VyL1dlZGdlX0FudGlsbGVzIiwidXNlcl9pZCI6IldlZGdlX0FudGlsbGVzIiwidmFsaWRpdHlfaW5fc2Vjb25kcyI6NjA0ODAwLCJpYXQiOjE3MjY0NzQxMjMsImV4cCI6MTcyNzA3ODkyM30.wdNjLnBw2Yl-gza8N1YRbNcbawg9Gw-_9mB_3oVL7CY"
     private let userId: String = "Team_11"
-    private let callId: String = "EQzXI7TXoTT4"
+//    private let callId: String = "EQzXI7TXoTT4"
+    private let callId: String = "7FKGnssRDn3Q"
 
     init() {
         let user = User(

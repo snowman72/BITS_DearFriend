@@ -18,7 +18,6 @@ protocol AuthenticationFormProtocol{
 class AuthViewModel: ObservableObject{
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: Volunteer?
-//    @Published var callManager = CallManager()
 
     init(){
         self.userSession = Auth.auth().currentUser
@@ -64,7 +63,7 @@ class AuthViewModel: ObservableObject{
             try Auth.auth().signOut()
             self.userSession = nil
             self.currentUser = nil
-//            self.callManager = CallManager() // Reset call manager
+
         } catch{
             print("Sign out error (DEBUG): \(error.localizedDescription)")
         }

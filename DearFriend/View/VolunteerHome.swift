@@ -11,7 +11,6 @@ import StreamVideoSwiftUI
 
 struct VolunteerHome: View {
     @EnvironmentObject var authViewModel: AuthViewModel
-//    @EnvironmentObject var callManager: CallManager
     @State var signOutSuccess = false
 //    @State private var showingIncomingCall = true
     @Binding var isShowProfileView: Bool
@@ -26,44 +25,6 @@ struct VolunteerHome: View {
             if (signOutSuccess == true) {
                 StartView(isShowStartView: .constant(true))
                 
-//            } else if (showingIncomingCall) {
-//                VStack {
-//                    Text("Incoming Call")
-//                        .font(.largeTitle)
-//                        .fontWeight(.bold)
-//                        .padding(.top, 50)
-//                    Spacer()
-//                    HStack {
-//                        // Accept call
-//                        Button {
-////                            callManager.handleIncomingCall(accept: true)
-//                            showingIncomingCall = false
-//                        } label: {
-//                            Image(systemName: "phone.circle.fill")
-//                                .resizable()
-//                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
-//                                .foregroundStyle(Color.green)
-//                        }
-//
-//                        Spacer()
-//
-//                        // Decline call
-//                        Button {
-////                            callManager.handleIncomingCall(accept: false)
-//                            showingIncomingCall = false
-//                        } label: {
-//                            Image(systemName: "x.circle.fill")
-//                                .resizable()
-//                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
-//                                .foregroundStyle(Color.red)
-//                        }
-//                    }
-//                    .padding(.horizontal, 40)
-//                }
-//                .padding()
-//                .background(
-//                    LinearGradient(colors: [Color.green, Color.blue, Color.white], startPoint: .top, endPoint: .bottom)
-//                )
 
             } else {
                 VStack {
@@ -71,13 +32,14 @@ struct VolunteerHome: View {
                         isShowProfileView = true
                     } label: {
                         ProfileIcon()
-                            .frame(width: 80, height: 80)
+                            .frame(width: 120, height: 120)
                     }
                     .offset(x: 130)
                     
                     Spacer()
                     
                     Text("Hello \(authViewModel.currentUser?.name ?? "there")! Looks like you have no call at the moment")
+                        .font(.title2)
                     
                     
                     Image("sleep")
@@ -91,8 +53,9 @@ struct VolunteerHome: View {
                         signOutSuccess = true
                     }) {
                         Text("Sign Out")
+                            .font(.title)
                             .foregroundColor(.white)
-                            .frame(maxWidth: .infinity, minHeight: 48)
+                            .frame(maxWidth: .infinity, minHeight: 70)
                             .background(Color.red)
                             .cornerRadius(10)
                     }
@@ -112,5 +75,5 @@ struct VolunteerHome: View {
 #Preview {
     VolunteerHome(isShowProfileView: .constant(false))
         .environmentObject(AuthViewModel())
-//        .environmentObject(CallManager())
+
 }

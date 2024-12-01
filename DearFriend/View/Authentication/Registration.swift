@@ -14,84 +14,120 @@ struct Registration: View {
     @State private var confirmPassword = ""
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthViewModel
+    @State private var showRegisterFailMessage = false
+    @State private var failMessage = ""
     
     var body: some View {
-        VStack{
-            // logo
+        VStack {
+            Spacer()
+            
+            Text("Register")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            
             Image("logo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 120,height: 120)
-                .padding(.vertical,32)
-        }
-        // form fields
-        VStack(spacing:24){
-            InputView(text: $email,
-                      title: "Email",
-                      placeholder: "name@example.com")
-            .autocapitalization(.none)
-            InputView(text: $name,
-                      title: "Full Name",
-                      placeholder: "Enter your name")
-            InputView(text: $password,
-                      title: "Password",
-                      placeholder: "Enter your pasword",
-                      isSecureField: true)
-            ZStack(alignment: .trailing){
-                InputView(text: $confirmPassword,
-                          title: "Confirm Password",
-                          placeholder: "Enter your pasword again",
+                .frame(width: 80,height: 80)
+            
+            // form fields
+            VStack(spacing:24){
+                
+                InputView(text: $email,
+                          title: "Email",
+                          placeholder: "name@example.com")
+                .autocapitalization(.none)
+                .padding(.bottom)
+                InputView(text: $name,
+                          title: "Full Name",
+                          placeholder: "Enter your name")
+                .padding(.bottom)
+                InputView(text: $password,
+                          title: "Password",
+                          placeholder: "Enter your pasword",
                           isSecureField: true)
-                if !password.isEmpty && !confirmPassword.isEmpty{
-                    if password == confirmPassword {
-                        Image(systemName: "checkmark.circle.fill")
-                            .imageScale(.large)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(.systemGreen))
-                    } else{
-                        Image(systemName: "xmark.circle.fill")
-                            .imageScale(.large)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(.systemRed))
+                .padding(.bottom)
+                ZStack(alignment: .trailing){
+                    InputView(text: $confirmPassword,
+                              title: "Confirm Password",
+                              placeholder: "Enter your pasword again",
+                              isSecureField: true)
+                    if !password.isEmpty && !confirmPassword.isEmpty{
+                        if password == confirmPassword {
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemGreen))
+                                .padding(.top, 50)
+                                .padding(.trailing, 10)
+                        } else{
+                            Image(systemName: "xmark.circle.fill")
+                                .imageScale(.large)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(.systemRed))
+                                .padding(.top, 50)
+                                .padding(.trailing, 10)
+                        }
+                        
                     }
-
                 }
             }
-        }
-        .padding(.horizontal)
-        .padding(.top,12)
-        
-        Button{
-            Task {
-                try await viewModel.createUser(withEmail:email, password: password, name: name)
+            .padding(.horizontal, 33)
+            .padding(.top,12)
+            
+            Button{
+                Task {
+                    do {
+                        try await viewModel.createUser(withEmail:email, password: password, name: name)
+                    } catch {
+                        showRegisterFailMessage = true
+                        failMessage = error.localizedDescription
+                    }
+                }
+            } label: {
+                HStack{
+                    Text("SIGN UP")
+                        .fontWeight(.semibold)
+                        .font(.title2)
+                    Image(systemName: "arrow.right")
+                }
+                .foregroundColor(.white)
+                .frame(width: UIScreen.main.bounds.width - 65, height:70)
+                .background(Color(.systemBlue))
+                .opacity(formIsValid ? 1.0 : 0.5)
+                .cornerRadius(10)
+                .padding(.top,40)
             }
-        } label: {
-            HStack{
-                Text("SIGN UP")
-                    .fontWeight(.semibold)
-                Image(systemName: "arrow.right")
-            }
-            .foregroundColor(.white)
-            .frame(width: UIScreen.main.bounds.width - 32, height:48)
             .disabled(!formIsValid)
-            .opacity(formIsValid ? 1.0 : 0.5)
-        }
-        .background(Color(.systemBlue))
-        .cornerRadius(10)
-        .padding(.top,24)
-        
-        Spacer()
-        
-        Button{
-            dismiss()
-        }label: {
+            
+            Text(showRegisterFailMessage == true ? failMessage : "")
+                .font(.callout)
+                .foregroundStyle(Color.red)
+            
+            Spacer()
+            Spacer()
+            
             HStack{
-                Text("Already have account")
-                Text("Sign in")
-                    .fontWeight(.bold)
+                Text("Already have account?")
+                    .font(.callout)
+                Button{
+                    dismiss()
+                }label: {
+                    Text("Sign in")
+                        .fontWeight(.bold)
+                        .underline()
+                        .font(.system(size: 14))
+                }
             }
-            .font(.system(size: 14))
+            .foregroundColor(Color.blue)
+            .padding(.horizontal)
         }
+        .background(
+            Image("background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+        )
     }
 }
 
