@@ -21,16 +21,14 @@ DearFriend is an innovative mobile application designed to empower visually impa
 ### 1. Authentication and Profile Management
 🔐 DearFriend includes a secure user authentication system powered by **Firebase** for database management. This ensures that only authorized users and volunteers can access the app. The profile management feature allows users to create and log in to their accounts, providing a personalized and secure experience.
 
-- **Technologies Used**: Firebase for authentication and database management.
-- **Developer**: Nguyen Vu Trong Nhan (s4028019@rmit.edu.vn) - Implemented login and registration functionalities.
+Firebase for authentication and database management.
 
 ---
 
 ### 2. Object Recognition with Text Recognition
 👁️ One of DearFriend's standout features is its Object Recognition and Text Recognition capabilities, powered by the **MobileNetV2 Apple ML model**. Users can point their devices at objects or text, and the system identifies them, announcing the object's name or reading the text aloud using Text-to-Speech technology. These features reduce the need for external assistance, promoting independence in daily tasks such as identifying objects or reading labels.
 
-- **Technologies Used**: MobileNetV2 Apple ML model for object and text detection, Text-to-Speech for audio feedback.
-- **Developer**: Nguyen Vu Trong Nhan (s4028019@rmit.edu.vn) - Implemented accessibility features including Text-to-Speech integration.
+MobileNetV2 Apple ML model for object and text detection, Text-to-Speech for audio feedback.
 
 ---
 
@@ -41,8 +39,6 @@ DearFriend is an innovative mobile application designed to empower visually impa
 
 ### 4. Volunteer Video Call System
 📞 A core feature of DearFriend is the Volunteer Video Call system, which connects users with volunteers for real-time assistance. Volunteers can guide users through tasks such as reading labels, navigating spaces, or identifying objects via video. The video call interface is designed to be simple and accessible, ensuring ease of use for visually impaired users.
-
-- **Developer**: Nguyen Minh Khai (s3995223@rmit.edu.vn) - Developed the video call feature and designed its UI/UX.
 
 ---
 
